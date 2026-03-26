@@ -1,4 +1,4 @@
-//Criei essa classe pois é auxiliar para realziar o método mostrarRankingBairros();
+// guarda o nome do bairro e quantos chamados ele teve
 
 public class BairroContagem {
     String nome;
