@@ -3,11 +3,11 @@ import java.util.Scanner;
 
 public class Main {
 
-    static Scanner ent = new Scanner(System.in);
-    static ArrayList<Chamado> atendimentosAtivos = new ArrayList<>();
-    static ArrayList<Chamado> historico = new ArrayList<>();
-    static Pilha<Chamado> pilhaEmergencia = new Pilha<>(30); // pilha para chamados urgentes (LIFO)
-    static FilaCircular<Chamado> filaComum = new FilaCircular<>(30); // fila para chamados comuns (FIFO)
+    private static Scanner ent = new Scanner(System.in);
+    private static ArrayList<Chamado> atendimentosAtivos = new ArrayList<>();
+    private static ArrayList<Chamado> historico = new ArrayList<>();
+    private static Pilha<Chamado> pilhaEmergencia = new Pilha<>(30); // pilha para chamados urgentes (LIFO)
+    private static FilaCircular<Chamado> filaComum = new FilaCircular<>(30); // fila para chamados comuns (FIFO)
 
     public static void main(String[] args) {
         while (true) {
