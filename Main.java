@@ -62,8 +62,10 @@ public class Main {
                     if (resp.equals("S")) {
                         System.out.println("Sistema finalizado.");
                         return;
+                    } else if (resp.equals("N")) {
+                        System.out.println("Voltando para o menu...");
+                        break;
                     }
-                    break;
 
                 default:
                     System.out.println("Opção inválida!");
@@ -73,6 +75,8 @@ public class Main {
 
     // 1
     public static void cadastrarChamado() {
+        System.out.println("\n========= CADASTRAR CHAMADO =========");
+        
         System.out.print("ID: ");
         int id;
 
@@ -117,6 +121,8 @@ public class Main {
 
     // 2
     public static void realizarAtendimento() {
+        System.out.println("\n========= REALIZAR ATENDIMENTO =========");
+        
         Chamado chamado = null;
 
         if (!pilhaEmergencia.isEmpty()) {
@@ -136,6 +142,8 @@ public class Main {
 
     // 3
     public static void concluirAtendimento() {
+        System.out.println("\n========= CONCLUIR =========");
+        
         if (atendimentosAtivos.isEmpty()) {
             System.out.println("Nenhum atendimento em andamento.");
             return;
@@ -174,7 +182,7 @@ public class Main {
 
     // 4
     public static void mostrarChamadosAbertos() {
-        System.out.println("\nPILHA EMERGÊNCIA");
+        System.out.println("\n========= CHAMADOS ABERTOS =========");
 
         if (pilhaEmergencia.isEmpty()) {
             System.out.println("Vazia");
@@ -197,6 +205,8 @@ public class Main {
 
     // 5
     public static void mostrarAtendimentosAtivos() {
+        System.out.println("\n========= ATENDIMENTOS ATIVOS =========");
+        
         if (atendimentosAtivos.isEmpty()) {
             System.out.println("Nenhum atendimento.");
             return;
@@ -209,6 +219,8 @@ public class Main {
 
     // 6
     public static void mostrarHistoricoCompleto() {
+        System.out.println("\n========= HISTORICO COMPLETO =========");
+        
         if (historico.isEmpty()) {
             System.out.println("Sem histórico.");
             return;
@@ -221,6 +233,8 @@ public class Main {
 
     // 7
     public static void mostrarEstatisticaNiveis() {
+        System.out.println("\n========= ESTATÍSTICA NÍVEIS =========");
+        
         int[] contagem = new int[6];
 
         for (Chamado c : historico) {
@@ -235,6 +249,8 @@ public class Main {
 
     // 8
     public static void mostrarChamadosPorNivel() {
+        System.out.println("\n========= CHAMADOS POR NÍVEL =========");
+        
         System.out.print("Nível: ");
         char nivel = ent.nextLine().charAt(0);
 
@@ -252,6 +268,8 @@ public class Main {
 
     // 9
     public static void mostrarRankingBairros() {
+        System.out.println("\n========= RANKING BAIRROS =========");
+        
         ArrayList<BairroContagem> ranking = new ArrayList<>();
 
         for (Chamado c : historico) {
@@ -293,6 +311,8 @@ public class Main {
 
     // 10
     public static void simularCadastro() {
+        System.out.println("\n========= SIMULAR CADASTRO =========");
+        
         Object[][] dados = {
             {101, "Tatuapé", "Comum", '2'},
             {102, "Pinheiros", "Emergência", '5'},
@@ -322,7 +342,7 @@ public class Main {
 
     public static void exibirMenu() {
 
-        System.out.println("Sistema de atendimento de Emergência Urbana");
+        System.out.println("\nSistema de atendimento de Emergência Urbana");
         System.out.println("\n1. Cadastrar chamado");
         System.out.println("2. Realizar atendimento chamado");
         System.out.println("3. Concluir atendimento");
